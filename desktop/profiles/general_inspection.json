@@ -1,0 +1,11 @@
+{
+  "id": "general_inspection",
+  "name": "通用圖面覆核起始範本（套用前依企業用途調整）",
+  "version": 1,
+  "required_fields": [
+    {"key": "drawing_number", "label": "圖號", "subject": "document", "critical": true},
+    {"key": "revision", "label": "圖面版次", "subject": "document", "critical": true},
+    {"key": "units", "label": "圖面尺寸單位", "subject": "document", "critical": true},
+    {"key": "material", "label": "材料", "subject": "document", "critical": false}
+  ]
+}

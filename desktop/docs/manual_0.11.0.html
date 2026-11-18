@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DrawIQ 0.11.0 操作手冊</title>
+<style>
+  body { margin: 40px auto; padding: 0 24px; max-width: 820px; color: #203641; font: 16px/1.75 "Microsoft JhengHei UI", sans-serif; }
+  h1 { line-height: 1.25; } h2 { margin-top: 30px; } li { margin-bottom: 8px; }
+  code { background: #edf4f4; padding: 2px 5px; }
+</style>
+</head>
+<body>
+<h1>DrawIQ 0.11.0 台灣耐落報價工作台</h1>
+<h2>登入</h2>
+<p>首次使用請輸入通用帳號 <code>user</code> 與密碼 <code>user</code>，然後設定自己的四位數帳號和四位數密碼。帳號與密碼可以是相同的四位數，允許前導零。已建立的個人帳號與原有帳號都可直接登入。</p>
+<h2>匯入與核對</h2>
+<p>從上方「匯入並讀圖」開啟 PDF 或圖片，RapidOCR 與 MinerU Basic 會辨識並預填左欄。也可載入既有成果。檔名下拉選單可切換圖面。</p>
+<ul>
+<li><strong>左側耐落報價欄位。</strong> 依照片中的報價標籤順序顯示 18 欄及依原圖來源預填的建議。選欄位可切換備選、改內容或單位。無可用讀值會顯示「待補」，核對後也可標記「圖面未提供」或「不適用」。</li>
+<li><strong>中央工程圖。</strong> 「彩色標註」可切換標註與原圖。要修改時，先選左側欄位，按「框選並辨識」並在原圖拖曳。可用讀值與單位會回填；有差異時可切換備選。框內無可用讀值時，可直接手填後使用同一原圖框。</li>
+<li><strong>右側各方法結果。</strong> 可依方法與頁次篩選。點結果會定位並放大原圖，點圖面框會切到對應結果。虛線是圖形版面定位。可從「匯出目前結果」另存 Markdown 或 DrawIQ JSON。</li>
+</ul>
+<p>核對整份標籤後，按「核准報價標籤」或 Ctrl+Enter，會開啟最後輸入視窗。可補填價格、專案代號等承辦資料，右側會預覽圖片。按「核准並輸出圖片」儲存最後版本。沒有資料的欄位留空。</p>
+<h2>輸出標籤圖片</h2>
+<p>核准後會存成 300 dpi、100 mm 寬的黑白 PNG 到工作區的 <code>exports</code>。可按「複製圖片」貼入報價單，或用「另存 PNG」插入檔案。之後可從「查看／輸出標籤圖片」重開並重新匯出。</p>
+<p>18 欄依序為報價單號、專案代號、報價人員、報價日期、報價有效日期、客戶、材質、報價膠別、顏色、塗佈方式、規格、數量、報價、品質要求、包裝方式、注意事項、聯絡電話、客戶傳真。原紙上的幣別與計價單位會保留，未印金額時顯示待補。</p>
+<h2>MinerU 辨識</h2>
+<p>可從上方選擇 MinerU Flash、MinerU Basic 或 RapidOCR ＋ MinerU Basic，再按「重新辨識」。重新辨識可選「本頁」或「全部頁」。勾「強制 OCR」時，當次忽略 PDF 文字層並從圖像讀字。完成本機 VLM 權重設定後也可選 MinerU Advanced。環境配置及評估見 <a href="mineru_0.11.0.md">MinerU 本機辨識與評估</a>。</p>
+<h2>報價草稿</h2>
+<p>上方「報價草稿」可匯出已確認規格和必要缺項。填齊本次批量及成本資訊後，可試算未稅金額。圖面或核對內容更新後，請重新開啟草稿並核對成本。正式工程核准與發布可從「進階工具」進入。</p>
+<h2>啟動與驗證</h2>
+<p>本機用 <code>啟動_DrawIQ_0.11.0.bat</code>。換機依序安裝 Python 3.13 x64、執行 <code>install_0.11.0.bat</code>、執行 <code>run.bat</code>。</p>
+<p>在版本資料夾執行 <code>.venv\Scripts\python.exe tools\run_harness.py --suite full</code> 可重跑隔離驗證。</p>
+</body>
+</html>

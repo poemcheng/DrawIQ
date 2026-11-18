@@ -1,0 +1,22 @@
+{
+  "schema": "drawiq-harness-cases/1",
+  "kind": "synthetic_contract",
+  "cases": [
+    {"id":"explicit-material","items":[{"key":"material","label":"材質","value":"S45C","raw":"材質：S45C"}],"expect_fields":{"material":{"has_source":true,"value":"S45C"}},"forbid_codes":["DQH-FIELD-TYPE","DQH-AUTO-EVIDENCE"]},
+    {"id":"customer-role","items":[{"key":"customer.name","label":"客戶","value":"456289 is design responsible.","raw":"Customer 456289 is design responsible."}],"mapping":{"customer.name":0},"expect_codes":["DQH-FIELD-TYPE"],"expect_ready":false},
+    {"id":"explicit-customer","items":[{"key":"customer.name","label":"客戶","value":"試用教學有限公司","raw":"客戶：試用教學有限公司"}],"expect_fields":{"customer.name":{"has_source":true,"value":"試用教學有限公司"}},"forbid_codes":["DQH-AUTO-EVIDENCE"]},
+    {"id":"iso-is-not-quantity","items":[{"key":"quotation.quantity","label":"數量","value":"ISO","raw":"ISO 7380-2"}],"mapping":{"quotation.quantity":0},"expect_codes":["DQH-FIELD-TYPE"],"expect_ready":false},
+    {"id":"annual-is-not-order","items":[{"key":"quantity","label":"數量","value":"160","unit":"PCS","raw":"年度需求數量：160 PCS/年"}],"expect_fields":{"quotation.quantity":{"has_source":false}}},
+    {"id":"explicit-order-quantity","items":[{"key":"quotation.quantity","label":"數量","value":"160","unit":"PCS","raw":"數量：160 PCS"}],"expect_fields":{"quotation.quantity":{"has_source":true,"value":"160"}},"forbid_codes":["DQH-FIELD-TYPE","DQH-AUTO-EVIDENCE"]},
+    {"id":"coating-polymer-is-not-base","context":[{"text":"Threadlock specifications","box":[0.6,0.1,0.95,0.13]}],"items":[{"key":"material","label":"材質","value":"Nylon Torq-Patch Tuflok","raw":"Material: Nylon Torq-Patch Tuflok","box":[0.6,0.14,0.95,0.18]}],"expect_fields":{"material":{"has_source":false}}},
+    {"id":"full-thread-specification","items":[{"key":"thread.specification","label":"螺紋規格","value":"M8X1.25-6h","raw":"螺紋：M8X1.25-6h"},{"key":"dimension.thread","label":"公制螺紋","value":"M8","raw":"M8X1.25-6h","subject":"unassigned_feature"}],"expect_fields":{"product.specification":{"has_source":true,"value":"M8X1.25-6h"}}},
+    {"id":"contradictory-materials","items":[{"key":"material","label":"材質","value":"S45C","raw":"Material: S45C"},{"key":"material","label":"材質","value":"SCM435","raw":"Material: SCM435"}],"expect_fields":{"material":{"has_source":false}},"expect_codes":["DOMAIN:cross_source_conflict"]},
+    {"id":"price-unit-is-not-value","items":[{"key":"quotation.price","label":"報價","value":"元／支（不含稅）","raw":"單價：元／支（不含稅）"}],"expect_fields":{"quotation.price":{"has_source":false}}},
+    {"id":"explicit-price","items":[{"key":"quotation.price","label":"報價","value":"12.50","unit":"TWD/PCS","raw":"報價：12.50 TWD / PCS"}],"expect_fields":{"quotation.price":{"has_source":true,"value":"12.50"}},"forbid_codes":["DQH-AUTO-EVIDENCE"]},
+    {"id":"rfq-date-is-not-quote-date","items":[{"key":"rfq.date","label":"詢價日期","value":"2026-05-22","raw":"詢價日期：2026-05-22"}],"expect_fields":{"quotation.date":{"has_source":false}}},
+    {"id":"missing-human-evidence-confirmation","items":[{"key":"material","label":"材質","value":"S45C","raw":"材質：S45C","status":"verified","support_verified":false}],"mapping":{"material":0},"expect_codes":["DQH-HUMAN-PROOF"],"expect_ready":false},
+    {"id":"reviewed-source-is-ready","items":[{"key":"material","label":"材質","value":"S45C","raw":"材質：S45C","status":"verified","support_verified":true}],"mapping":{"material":0},"expect_ready":true,"forbid_codes":["DQH-HUMAN-PROOF","DQH-AUTO-EVIDENCE"]},
+    {"id":"vlm-incomplete-keeps-ocr","items":[{"key":"material","label":"材質","value":"S45C","raw":"材質：S45C"}],"tool_runs":[{"id":"fixture-model","page":1,"model":"fixture-vision","status":"complete","vlm_status":"incomplete"}],"expect_fields":{"material":{"has_source":true,"value":"S45C"}},"expect_codes":["DQH-MODEL"]},
+    {"id":"invalid-source-box","items":[{"key":"material","label":"材質","value":"S45C","raw":"材質：S45C"}],"invalid_box":[0.8,0.2,0.1,0.3],"expect_codes":["DQH-STRUCTURE"],"expect_ready":false}
+  ]
+}

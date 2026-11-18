@@ -1,0 +1,7 @@
+{
+  "required_document_keys": ["document_id", "document_type", "fields", "issues"],
+  "field_object": {"raw":"str or null", "normalized":"any or null", "source":{"page":"int", "bbox":"array or null", "text":"str", "engine":"str"}, "confidence":"float [0,1]", "status":"extracted|needs_review|missing|conflict"},
+  "quote_fields": ["quote_no","staff","quote_date","valid_until","material","coating_grade","color","coating_method","specification","quantity","unit_price","quality_requirements","packing_notes","contact_phone"],
+  "drawing_fields": ["specification","material","coating_grade","drawing_no","part_no","quantity"],
+  "issues": [{"field":"str", "code":"str", "message":"str"}]
+}

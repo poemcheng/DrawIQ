@@ -1,0 +1,19 @@
+{
+  "schema": "drawiq-supplied-skill-provenance/1",
+  "archive_name": "quote_drawing_skill_harness_v0.1.zip",
+  "archive_sha256": "8217b3027b607ad8825fb97fc2e569451991db77a72e0cf0e24b99c322949d13",
+  "integrated_application_version": "0.9.0",
+  "source_files": {
+    "quote_drawing_skill_harness/AGENTS.md": "08923083f19e1cc66f34b88d0d86b1cf49abe0b2201707501280e4b2aaf6c434",
+    "quote_drawing_skill_harness/README.md": "4aa591e8d684b90c0f18aff5684c415edb6dceb81a7a0f897116d27665b214c9",
+    "quote_drawing_skill_harness/requirements.txt": "6c9354c503d412e81030fc254dd99a066734b337f7fb4f487d0970ea8b67a50a",
+    "quote_drawing_skill_harness/references/field_schema.json": "4fbd20c3b4c85f66bce9ee40a52bba9f5af4be230beb0169f61132efd994d5eb",
+    "quote_drawing_skill_harness/references/ocr_contract.md": "4efa957c0cfccac8417b4fd73bdf4c7c4f156032d32ac2215d07cf62f5b2fe63",
+    "quote_drawing_skill_harness/src/qdextract/cli.py": "1987c146e22e0559fe01f824399dc60283520da5e8c9f6e4c91453c0f2d0fa85",
+    "quote_drawing_skill_harness/src/qdextract/core.py": "676ef350c73e5e1a58af0bd44b5d49f0dd6c45a6b8eac4b248389950bd35f11b",
+    "quote_drawing_skill_harness/src/qdextract/__init__.py": "20c8e430ededc2143396e553a3c67aac4ec483ef54efdfcb18a31cb162ca0646",
+    "quote_drawing_skill_harness/.agents/skills/quote-drawing-extraction/SKILL.md": "a7836ce8fa012c7ee0c450ca5b67a6ba3272f4b5533e82c00d021274cbd4cfdf"
+  },
+  "usage": "Reference rules and isolated fixtures. Original content preserved; application adapter implements production integration. Fixture transcription is not OCR accuracy ground truth.",
+  "public_copy": "The included OCR contract uses neutral fixture identifiers. The original SHA-256 values identify the upstream archive prior to public fixture substitutions."
+}
